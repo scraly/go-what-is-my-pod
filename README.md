@@ -16,3 +16,17 @@ docker build -t scraly/what-is-my-pod:1.0.0 .
 docker run -it -p 8080:8080 scraly/what-is-my-pod:1.0.0
 docker push scraly/what-is-my-pod:1.0.0
 ```
+
+## Kubernetes
+
+```
+$ kubectl apply -f deployment.yml
+deployment.apps/what-is-my-pod-deployment created
+
+$ kubectl expose deployment what-is-my-pod-deployment --name=what-is-my-pod
+service/what-is-my-pod exposed
+
+$ stern what-is-my-pod
++ what-is-my-pod-deployment-7b85865ff-wlrvz › what-is-my-pod
+what-is-my-pod-deployment-7b85865ff-wlrvz what-is-my-pod 2022/03/01 09:20:04 Listening on localhost:8080
+```
