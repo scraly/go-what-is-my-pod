@@ -1,21 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-deployment
+  name: what-is-my-pod-deployment
   labels:
-    app: hello-world
+    app: what-is-my-pod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-world
+      app: what-is-my-pod
   template:
     metadata:
       labels:
-        app: hello-world
+        app: what-is-my-pod
     spec:
       containers:
-      - name: hello-world
-        image: ovhplatform/hello
+      - name: what-is-my-pod
+        image: scraly/what-is-my-pod:1.0.0
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+        env:
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name

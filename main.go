@@ -10,8 +10,8 @@ import (
 func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		podName := os.Getenv("MY_NODE_NAME")
-		fmt.Fprintf(w, "Hello, %q", podName)
+		podName := os.Getenv("MY_POD_NAME")
+		fmt.Fprintf(w, "Hello %q!", podName)
 	})
 
 	log.Println("Listening on localhost:8080")
