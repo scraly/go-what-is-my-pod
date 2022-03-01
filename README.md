@@ -34,5 +34,5 @@ what-is-my-pod-deployment-7b85865ff-wlrvz what-is-my-pod 2022/03/01 09:20:04 Lis
 ## Test
 
 ```
-curl --cookie "name=stickounet" http://<LB_IP>:8080
+curl --cookie-jar cookie.txt --cookie cookie.txt http://<LB_IP>/
 ```
