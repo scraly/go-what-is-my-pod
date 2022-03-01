@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: what-is-my-pod
-        image: scraly/what-is-my-pod:1.0.0
+        image: scraly/what-is-my-pod:1.0.1
         ports:
         - containerPort: 8080
         env:
