@@ -30,3 +30,9 @@ $ stern what-is-my-pod
 + what-is-my-pod-deployment-7b85865ff-wlrvz › what-is-my-pod
 what-is-my-pod-deployment-7b85865ff-wlrvz what-is-my-pod 2022/03/01 09:20:04 Listening on localhost:8080
 ```
+
+## Test
+
+```
+curl --cookie "name=stickounet" http://<LB_IP>:8080
+```
